@@ -9,7 +9,7 @@ import icon from "../images/emoji.svg";
 import styles from "../styles/chat.module.css";
 import Messages from "./Messages";
 
-const socket = io.connect("https://chat-client-dun-beta.vercel.app/");
+const socket = io.connect("http://localhost:5000");
 
 const Chat = () => {
     const { search } = useLocation();
