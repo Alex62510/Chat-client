@@ -60,41 +60,41 @@ const Chat = () => {
     return (
         <div className={styles.wrap}>
             <div className={styles.header}>
-                <div className={styles.title}>
-                    {params.room}
-                </div>
-                <div className={styles.users}>
-                    {users} users in this room
-                </div>
+                <div className={styles.title}>{params.room}</div>
+                <div className={styles.users}>{users} users in this room</div>
                 <button className={styles.left} onClick={leftRoom}>
                     Left the room
                 </button>
             </div>
+
             <div className={styles.messages}>
-                <Messages messages={state} name={params.name}/>
+                <Messages messages={state} name={params.name} />
             </div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.input}>
                     <input
-                        type={"text"}
+                        type="text"
                         name="message"
+                        placeholder="What do you want to say?"
                         value={message}
                         onChange={handleChange}
-                        autoComplete={"off"}
-                        placeholder="What you want to say?"
-                        required/>
+                        autoComplete="off"
+                        required
+                    />
                 </div>
                 <div className={styles.emoji}>
-                    <img src={icon} alt="" onClick={() => setOpen(!isOpen)}/>
+                    <img src={icon} alt="" onClick={() => setOpen(!isOpen)} />
+
                     {isOpen && (
                         <div className={styles.emojies}>
-                            <EmojiPicker onEmojiClick={onEmojiClick}/>
+                            <EmojiPicker onEmojiClick={onEmojiClick} />
                         </div>
                     )}
                 </div>
+
                 <div className={styles.button}>
-                    <input type='submit' onSubmit={handleSubmit} value='Send a message'/>
+                    <input type="submit" onSubmit={handleSubmit} value="Send a message" />
                 </div>
             </form>
         </div>
